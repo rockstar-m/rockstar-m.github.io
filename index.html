@@ -57,6 +57,10 @@
       letter-spacing: 0.2px;
       margin-bottom: 14px;
       color: #eaf6fd;
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
     }
     .cta-strip {
       margin-top: 22px;
@@ -158,7 +162,7 @@
     }
     .project-img {
       width: 100%;
-      max-width:290px;
+      max-width: 290px;
       object-fit: cover;
       border-radius: 7px;
       margin-bottom: 16px;
@@ -226,6 +230,9 @@
         padding: 0 20px;
         margin: 0 6px;
       }
+      .hero-sub {
+        font-size: 1.15rem;
+      }
     }
     @media (max-width: 768px) {
       header {
@@ -245,17 +252,29 @@
         padding: 0 18px;
         margin: 0 5px;
       }
-    }
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.4rem;
-      }
-      .skill-tag {
-        font-size: 0.9rem;
-        padding: 0 14px;
-        margin: 0 4px;
+      .hero-sub {
+        font-size: 1.12rem;
       }
     }
+    @media (max-width: 600px) {
+  h1 {
+    font-size: 1.2rem; /* Smaller main heading */
+  }
+  .hero-sub {
+    font-size: 1rem; /* Smaller subtitle */
+  }
+  .skill-tag {
+    font-size: 0.85rem; /* Smaller skill tags for better fit */
+  }
+  .project-card p {
+    font-size: 0.9rem; /* Smaller project description */
+  }
+  /* Buttons can be smaller but still clickable */
+  .cta-btn {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+}
     .contact-section {
       text-align: center;
       padding: 32px 7px 32px;
@@ -298,18 +317,19 @@
       font-family: "Montserrat", sans-serif;
       user-select: none;
     }
+    
   </style>
 </head>
 <body>
-  <!-- HERO-->
+  <!-- HERO -->
   <header>
     <div class="profile-pic-bg">
       <img src="Muskaan-img.png" alt="Muskaan profile photo" />
     </div>
     <h1>Muskaan | HubSpot CMS Developer (Senior Associate Marketing Automation)</h1>
     <div class="hero-sub">
-      Modular themes, real conversions, inventive solutions.<br />
-      Let’s build something extraordinary together!
+      I specialize in modular themes, workflow automations, Webflow & HubSpot development.<br />
+      Experienced in building scalable lists, responsive email templates, and landing pages (LPs). Let’s build something extraordinary together!
     </div>
     <div class="cta-strip">
       <a class="cta-btn" href="Muskaan%20Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
@@ -319,6 +339,19 @@
 
   <!-- MAIN CONTENT -->
   <main>
+    <!-- ABOUT SECTION -->
+    <section class="projects-showcase" style="margin-top:20px; margin-bottom:0;">
+      <h2>About</h2>
+      <p style="max-width:700px; margin:0 auto; font-size:1.11rem; line-height:1.6; color:#222b38;">
+        As a seasoned <strong>HubSpot CMS Developer</strong>, I deliver:<br><br>
+        • Powerful <strong>HubSpot workflows and automation</strong> for marketing efficiency<br>
+        • Advanced <strong>list segmentation and management</strong> to target audiences smartly<br>
+        • Expert <strong>email template and landing page development</strong> for conversions<br>
+        • Skilled <strong>Webflow</strong> & HubSpot CMS theme and module customization<br><br>
+        Leveraging this toolkit, I craft solutions that help businesses accelerate growth and engagement.
+      </p>
+    </section>
+
     <!-- PROJECTS SECTION -->
     <section class="projects-showcase">
       <h2>Featured Work</h2>
@@ -350,10 +383,14 @@
       <h2>Skills &amp; Tools</h2>
       <div class="skills-carousel">
         <div class="skill-tag" tabindex="0">HubSpot CMS</div>
+        <div class="skill-tag" tabindex="0">Webflow</div>
         <div class="skill-tag" tabindex="0">HubL</div>
         <div class="skill-tag" tabindex="0">HubDB</div>
         <div class="skill-tag" tabindex="0">JavaScript</div>
         <div class="skill-tag" tabindex="0">HTML5 / CSS3</div>
+        <div class="skill-tag" tabindex="0">LP Development</div>
+        <div class="skill-tag" tabindex="0">Workflows</div>
+        <div class="skill-tag" tabindex="0">Lists</div>
         <div class="skill-tag" tabindex="0">Email Templates</div>
         <div class="skill-tag" tabindex="0">Performance</div>
         <div class="skill-tag" tabindex="0">Figma &amp; UI Dev</div>
@@ -380,15 +417,13 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer>
-    &copy; 2025 Muskaan • HubSpot CMS Engineer • All Rights Reserved.
+    &copy; 2025 Muskaan • HubSpot CMS Developer • All Rights Reserved.
   </footer>
 
   <!-- Slick carousel JS dependencies -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" crossorigin="anonymous"></script>
-
   <script>
     $(document).ready(function () {
       $('.skills-carousel').slick({
