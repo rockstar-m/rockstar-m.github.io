@@ -5,21 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Muskaan | HubSpot CMS Developer</title>
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: linear-gradient(to right, #f8f9fa, #e0eafc);
+      background: linear-gradient(to right, #f0f4f8, #e6f0ff);
       color: #333;
       animation: fadeIn 1s ease-in-out;
     }
+
     header {
-      background: #6c63ff;
+      background: linear-gradient(to right, #002B5B, #005D8C);
       color: white;
       text-align: center;
-      padding: 50px 20px;
+      padding: 60px 20px;
       animation: slideDown 1s ease;
     }
+
     header img {
       width: 150px;
       height: 150px;
@@ -28,99 +33,132 @@
       border: 5px solid white;
       margin-bottom: 15px;
     }
+
     header h1 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       margin: 0;
     }
+
     header p {
-      font-size: 1rem;
+      font-size: 1.1rem;
       margin-top: 10px;
     }
+
     .btn {
       display: inline-block;
-      margin-top: 15px;
+      margin-top: 20px;
       background: white;
-      color: #6c63ff;
-      padding: 10px 20px;
+      color: #005D8C;
+      padding: 10px 22px;
       border-radius: 25px;
       text-decoration: none;
       font-weight: bold;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: 0.3s ease;
     }
+
     .btn:hover {
-      background: #e0e0ff;
+      background: #cce6ff;
     }
+
     section {
       max-width: 900px;
-      margin: 40px auto;
+      margin: 50px auto;
       padding: 0 20px;
     }
+
     h2 {
-      color: #6c63ff;
+      color: #005D8C;
       border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-      margin-bottom: 20px;
+      padding-bottom: 6px;
+      margin-bottom: 25px;
       animation: fadeIn 1s ease;
     }
-    .project-card, .skills-list, .contact {
+
+    .project-card, .skills-list, .contact, .achievements-list {
       animation: fadeInUp 1s ease;
     }
+
     .project-card {
       background: white;
       border-radius: 12px;
       padding: 20px;
       margin-bottom: 20px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
     }
+
     .project-card:hover {
       transform: translateY(-5px);
     }
+
     .skills-list {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
+
     .skill {
       background: #e6e6ff;
       padding: 8px 16px;
       border-radius: 20px;
       font-size: 14px;
+      transition: all 0.3s ease;
+      cursor: default;
     }
+
+    .skill:hover {
+      background-color: #005D8C;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .achievements-list {
+      list-style-type: "🌟 ";
+      padding-left: 20px;
+    }
+
     a {
-      color: #6c63ff;
+      color: #005D8C;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
     footer {
       text-align: center;
       padding: 30px 0;
       background: #f1f1f1;
-      color: #777;
+      color: #555;
     }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
+
     @keyframes slideDown {
-      from { transform: translateY(-100px); opacity: 0; }
+      from { transform: translateY(-80px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
+
     @keyframes fadeInUp {
       from { transform: translateY(30px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
+
     @media (max-width: 600px) {
       header img {
         width: 100px;
         height: 100px;
       }
+
       header h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
+
       .btn {
         font-size: 14px;
         padding: 8px 16px;
@@ -132,13 +170,21 @@
   <header>
     <img src="20241203_141522.jpg" alt="Muskaan">
     <h1>Muskaan</h1>
-    <p>Senior Associate – HubSpot CMS Developer | Based in Punjab, India</p>
+    <p>Senior Associate – HubSpot CMS Developer | Punjab, India</p>
     <a href="Muskaan%20Resume.pdf" class="btn" target="_blank">Download Resume</a>
   </header>
 
   <section>
     <h2>👩‍💻 About Me</h2>
-    <p>I'm a passionate HubSpot CMS Developer with 2+ years of experience building high-performance landing pages, themes, and modules. Skilled in HubL, HubDB, and email development — I focus on clean code, responsive design, and marketing-ready experiences.</p>
+    <p>
+      I’m Muskaan, a dedicated and detail-oriented HubSpot CMS Developer with over 2 years of hands-on experience building high-conversion websites, dynamic landing pages, and custom modules. Currently working as a Senior Associate at Growth Natives, I specialize in turning marketing goals into scalable, user-friendly CMS experiences within the HubSpot ecosystem.
+    </p>
+    <p>
+      My expertise lies in HubL templating, HubDB-driven content, responsive HTML/CSS/JavaScript development, and email templates that render flawlessly across devices. I’ve led complete website migrations, developed drag-and-drop themes from scratch, and created modules now published on the HubSpot Marketplace. Whether it's making a design pixel-perfect or optimizing assets for SEO and accessibility, I focus on writing clean, maintainable code that performs.
+    </p>
+    <p>
+      Beyond the code, I collaborate closely with marketing, design, and strategy teams to ensure what I build not only works—but works toward real business results. I believe in blending thoughtful UX with technical excellence to drive measurable growth.
+    </p>
   </section>
 
   <section>
@@ -150,9 +196,9 @@
       <span class="skill">CSS</span>
       <span class="skill">JavaScript</span>
       <span class="skill">HubDB</span>
-      <span class="skill">Email Templates</span>
-      <span class="skill">Landing Pages</span>
       <span class="skill">Braze / Bravo</span>
+      <span class="skill">Email Templates</span>
+      <span class="skill">Responsive Design</span>
       <span class="skill">Webflow</span>
       <span class="skill">SEO / Accessibility</span>
     </div>
@@ -162,32 +208,52 @@
     <h2>🚀 Projects</h2>
 
     <div class="project-card">
-      <h3>Beyond Bound – HubSpot Marketplace Theme</h3>
-      <p>Developed a scalable, responsive theme listed on HubSpot Marketplace using HubL, custom CSS, and drag-and-drop modules. Features dynamic smart content, CTAs, and testimonial modules.</p>
+      <h3><a href="https://ecosystem.hubspot.com/marketplace/website/beyond-bounds-theme-by-growth-natives" target="_blank">Beyond Bound – HubSpot Marketplace Theme</a></h3>
+      <p>Designed and developed a fully responsive, modular theme for HubSpot Marketplace. It supports dynamic content via HubDB and smart CTAs. Built with performance and flexibility in mind for marketers and designers alike.</p>
+    </div>
+
+    <div class="project-card">
+      <h3><a href="https://ecosystem.hubspot.com/marketplace/modules/speaker-testimonial-module-by-growth-natives" target="_blank">Speaker/Testimonial Module</a></h3>
+      <p>Developed a reusable testimonial module supporting dynamic speaker listings. Ideal for event-based landing pages and built with HubL for content flexibility.</p>
     </div>
 
     <div class="project-card">
       <h3>WordPress to HubSpot Migration</h3>
-      <p>Migrated a full website to HubSpot CMS with improved performance, SEO, and editable content modules. Maintained brand and visual integrity while enabling easier backend management.</p>
+      <p>Migrated an enterprise website from WordPress to HubSpot CMS. Rebuilt structure with custom themes, optimized for SEO, and trained editors post-deployment.</p>
     </div>
+  </section>
 
-    <div class="project-card">
-      <h3>Responsive Email Campaigns (Braze / HubSpot)</h3>
-      <p>Built email templates using Braze’s Liquid logic and HubSpot. Increased engagement rates by optimizing code, content targeting, and template structure.</p>
-    </div>
+  <section>
+    <h2>🎖 Achievements</h2>
+    <ul class="achievements-list">
+      <li>
+        Promoted to Senior Associate within 2 years at Growth Natives in recognition of strong technical contributions, successful client delivery, and leadership in HubSpot CMS-based projects.
+      </li>
+      <li>
+        Designed and developed the <a href="https://ecosystem.hubspot.com/marketplace/website/beyond-bounds-theme-by-growth-natives" target="_blank">“Beyond Bound” theme</a> for the HubSpot Marketplace. Features a scalable layout system, reusable modules, and personalization-ready content blocks.
+      </li>
+      <li>
+        Created the <a href="https://ecosystem.hubspot.com/marketplace/modules/speaker-testimonial-module-by-growth-natives" target="_blank">“Speaker/Testimonial Module”</a>, enabling marketers to showcase event speakers or customer feedback dynamically using HubDB and flexible display options.
+      </li>
+      <li>
+        Led a full WordPress to HubSpot CMS migration for a nonprofit client, improving speed, content flexibility, and long-term maintainability with minimal post-launch support required.
+      </li>
+      <li>
+        Recognized for consistently delivering clean, scalable code and user-focused implementations across web, email, and landing page projects.
+      </li>
+    </ul>
   </section>
 
   <section>
     <h2>📞 Contact</h2>
     <div class="contact">
       <p>Email: <a href="mailto:muskaan1812ngl@gmail.com">muskaan1812ngl@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/muskaan-muskaan-2246161b4" target="_blank">linkedin.com/in/muskaan-muskaan-2246161b4</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/muskaan-muskaan-2246161b4/" target="_blank">linkedin.com/in/muskaan-muskaan-2246161b4</a></p>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 Muskaan. All rights reserved.
+    &copy; 2025 Muskaan. Portfolio powered by GitHub Pages.
   </footer>
 </body>
 </html>
-
