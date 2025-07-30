@@ -4,127 +4,253 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Muskaan | HubSpot CMS Developer (Senior Associate Marketing Automation)</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
   <style>
     body {
-      margin: 0; font-family: 'Open Sans',sans-serif; background: #f8fcff;
-      color: #222b38; min-height: 100vh;
-      display: flex; flex-direction: column;
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+      background: #f8fcff;
+      color: #222b38;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     header {
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      min-height: 80vh; padding: 0 22px;
-      background: linear-gradient(120deg, #005D8C 60%, #2fd9fe 100%);
-      color: #fff; text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      padding: 0 22px;
+      background: linear-gradient(120deg, #005d8c 60%, #2fd9fe 100%);
+      color: #fff;
+      text-align: center;
       position: relative;
     }
-    .profile-pic-bg { margin: 0 0 22px 0;}
+    .profile-pic-bg {
+      margin: 0 0 22px 0;
+    }
     .profile-pic-bg img {
-      width: 110px;height:110px;border-radius:50%;border:4px solid #fff;box-shadow:0 2px 20px #38c7fa66;
-      object-fit:cover;background:#eee;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 2px 20px #38c7fa66;
+      object-fit: cover;
+      background: #eee;
     }
     h1 {
-      font-family: 'Montserrat',Arial,sans-serif;
-      font-weight: 700; font-size: 2.74rem; margin-bottom:10px;
-      text-shadow:0 4px 18px #38c7fa90;
+      font-family: "Montserrat", Arial, sans-serif;
+      font-weight: 700;
+      font-size: 2.74rem;
+      margin-bottom: 10px;
+      text-shadow: 0 4px 18px #38c7fa90;
     }
     .hero-sub {
-      font-size:1.23rem; letter-spacing:.2px; margin-bottom:14px;
+      font-size: 1.23rem;
+      letter-spacing: 0.2px;
+      margin-bottom: 14px;
       color: #eaf6fd;
     }
     .cta-strip {
-      margin-top: 22px; display: flex; gap: 16px; justify-content: center;flex-wrap:wrap;
+      margin-top: 22px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
     .cta-btn {
-      padding: 13px 34px; border-radius: 29px;
-      font-weight: 700; font-size: 1.15rem; letter-spacing:.5px; border:none;
-      background: #fff; color: #005D8C;
-      transition: .25s; box-shadow:0 3px 20px #005d8c22; cursor:pointer;
-      font-family: 'Montserrat',Arial,sans-serif;
-      text-decoration: none; outline: none;
+      padding: 13px 34px;
+      border-radius: 29px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+      border: none;
+      background: #fff;
+      color: #005d8c;
+      transition: 0.25s;
+      box-shadow: 0 3px 20px #005d8c22;
+      cursor: pointer;
+      font-family: "Montserrat", Arial, sans-serif;
+      text-decoration: none;
+      outline: none;
     }
-    .cta-btn:hover { background: #ff5b5b; color: #fff;}
-    .projects-showcase, .skills-row { background: #fff; border-radius:17px; box-shadow:0 2px 14px #13a6e210; margin:30px 0; padding: 36px 12px;}
+    .cta-btn:hover {
+      background: #ff5b5b;
+      color: #fff;
+    }
+    .projects-showcase,
+    .skills-row {
+      background: #fff;
+      border-radius: 17px;
+      box-shadow: 0 2px 14px #13a6e210;
+      margin: 30px 0;
+      padding: 36px 12px;
+    }
     .projects {
-      display: flex; gap:22px; flex-wrap:wrap; justify-content:center;
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     .project-card {
-      flex: 1 1 260px; background: #eaf6fd; border-radius:14px; box-shadow:0 2px 10px #005D8C13;
-      padding: 25px 16px; margin:10px 0;
-      display: flex;flex-direction:column;align-items:center;
-      transition:transform .25s;
+      flex: 1 1 260px;
+      background: #eaf6fd;
+      border-radius: 14px;
+      box-shadow: 0 2px 10px #005d8c13;
+      padding: 25px 16px;
+      margin: 10px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.25s;
     }
-    .project-card:hover { transform: translateY(-3px) scale(1.03);}
-    .project-card h3 {margin-bottom:10px;color:#005D8C;}
-    .project-card p {margin-bottom:12px;}
+    .project-card:hover {
+      transform: translateY(-3px) scale(1.03);
+    }
+    .project-card h3 {
+      margin-bottom: 10px;
+      color: #005d8c;
+    }
+    .project-card p {
+      margin-bottom: 12px;
+      text-align: center;
+    }
     .project-card a {
-      background:#005D8C; color:#fff; border-radius:8px; padding: 5px 15px;
-      font-weight:600;text-decoration:none;
-      transition:background .2s;
+      background: #005d8c;
+      color: #fff;
+      border-radius: 8px;
+      padding: 5px 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
     }
-    .project-card a:hover {background:#ff5b5b;}
+    .project-card a:hover {
+      background: #ff5b5b;
+    }
     .project-img {
-      width:100%;max-width:283px;height:110px;object-fit:cover;border-radius:7px;margin-bottom:10px;border:1px solid #e1f2fc;
+      width: 100%;
+      max-width: 283px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 7px;
+      margin-bottom: 10px;
+      border: 1px solid #e1f2fc;
       background: #e1eaf6;
     }
     .skills-row {
       text-align: center;
     }
-    .skills-list {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+    /* Carousel styles */
+    .carousel-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 18px;
+    }
+    .skills-carousel {
+      display: flex;
+      gap: 12px;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      width: 92vw;
+      max-width: 600px;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE 10+ */
+      user-select: none;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    /* Hide scrollbar for WebKit browsers */
+    .skills-carousel::-webkit-scrollbar {
+      display: none;
     }
     .skill-tag {
-      background: #d8e8ff; border-radius:19px; padding:8px 23px; font-weight:600;color:#005d8c;
-      margin-bottom:7px;
-      box-shadow:0 2px 7px #005d8c11; transition: background .25s,color .25s;
+      min-width: 120px;
+      flex: 0 0 120px;
+      text-align: center;
+      font-weight: 600;
+      background: #d8e8ff;
+      border-radius: 19px;
+      padding: 8px 23px;
+      color: #005d8c;
+      box-shadow: 0 2px 7px #005d8c11;
+      margin-bottom: 7px;
+      font-size: 1.07rem;
+      user-select: none;
+      cursor: default;
+      transition: background 0.25s, color 0.25s;
+      scroll-snap-align: center;
     }
-    .skill-tag:hover { background: #005D8C; color: #fff;}
-    .carousel-container {
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-  position: relative; width: 100%; overflow: hidden; margin-top: 18px;
-}
-.skills-carousel {
-  display: flex; gap: 12px; overflow: hidden; scroll-behavior: smooth;
-  list-style: none; padding: 0; margin: 0;
-  width: 92vw; max-width: 440px;
-}
-.skill-tag {
-  min-width: 120px; flex: 0 0 120px; text-align: center;
-  font-weight: 600; background: #d8e8ff; border-radius: 19px;
-  padding: 8px 23px; color: #005d8c; box-shadow:0 2px 7px #005d8c11;
-  margin-bottom:7px; font-size:1.07rem;
-}
-.carousel-arrow {
-  background: #fff; border: 2px solid #e5f1fb; color: #005d8c;
-  border-radius: 50%; width: 36px; height: 36px; font-size: 1.4rem;
-  font-weight: bold; box-shadow: 0 2px 6px #005d8c24; cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  display: flex; align-items: center; justify-content: center;
-  z-index: 10; opacity: 0.8; margin: 0 3px;
-}
-.carousel-arrow:hover { background: #ff5b5b; color: #fff; }
-
-    @media(max-width:760px){
-      header{min-height:60vh;}
-      h1 { font-size: 1.5rem;}
-      .projects { flex-direction:column;}
+    .skill-tag:hover {
+      background: #005d8c;
+      color: #fff;
+    }
+    @media (max-width: 760px) {
+      header {
+        min-height: 60vh;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .projects {
+        flex-direction: column;
+      }
+      .skills-carousel {
+        max-width: 90vw;
+      }
+      .skill-tag {
+        min-width: 90px;
+        font-size: 0.98rem;
+      }
     }
     .contact-section {
-      text-align:center;padding:32px 7px 12px;
-      background:#005D8C;color:#fff;margin:38px auto 0 auto;border-radius:13px;
-      max-width:600px;
+      text-align: center;
+      padding: 32px 7px 12px;
+      background: #005d8c;
+      color: #fff;
+      margin: 38px auto 0 auto;
+      border-radius: 13px;
+      max-width: 600px;
+      font-family: "Open Sans", sans-serif;
     }
     .contact-links {
-      margin:15px 0;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
+      margin: 15px 0;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
-    .contact-links a{color:#2fd9fe;font-weight:700;text-decoration:none;background: #fff;padding:5px 14px;border-radius:8px;}
-    .contact-links a:hover{background:#ff5b5b;color:#fff;}
-    footer {text-align: center; color:#888;font-size:1rem;padding:30px 14px 16px;font-family:'Montserrat';}
-    @media (max-width:600px){
-  .skills-carousel{ max-width:200px; }
-  .skill-tag{ min-width:92px; font-size:.98rem;}
-}
+    .contact-links a {
+      color: #2fd9fe;
+      font-weight: 700;
+      text-decoration: none;
+      background: #fff;
+      padding: 5px 14px;
+      border-radius: 8px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .contact-links a:hover {
+      background: #ff5b5b;
+      color: #fff;
+    }
+    footer {
+      text-align: center;
+      color: #888;
+      font-size: 1rem;
+      padding: 30px 14px 16px;
+      font-family: "Montserrat", sans-serif;
+    }
   </style>
 </head>
 <body>
@@ -133,102 +259,136 @@
     <div class="profile-pic-bg">
       <img src="Muskaan-img.png" alt="Muskaan profile photo" />
     </div>
-    <h1>HubSpot CMS Engineering That Grows Brands</h1>
-    <div class="hero-sub">Modular themes, real conversions, inventive solutions.<br>Let’s build something extraordinary together!</div>
+    <h1>Muskaan | HubSpot CMS Developer (Senior Associate Marketing Automation)</h1>
+    <div class="hero-sub">
+      Modular themes, real conversions, inventive solutions.<br />
+      Let’s build something extraordinary together!
+    </div>
     <div class="cta-strip">
-      <a class="cta-btn" href="Muskaan%20Resume.pdf" target="_blank">Download Resume</a>
-      <a class="cta-btn" href="#contact">Request Free Consultation</a>
+      <a class="cta-btn" href="Muskaan%20Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+      <a class="cta-btn" href="https://calendar.app.google/prkdr5w9N7tcMRUU8" target="_blank" rel="noopener">Schedule a Meeting</a>
     </div>
   </header>
-  <!-- PROJECTS -->
+
+  <!-- MAIN CONTENT -->
   <main>
+    <!-- PROJECTS SECTION -->
     <section class="projects-showcase">
       <h2 style="text-align:center;">Featured Work</h2>
       <div class="projects">
         <div class="project-card">
-          <img src="version 1 (1).png" alt="Beyond Bound Theme" class="project-img"/>
+          <img src="version 1 (1).png" alt="Beyond Bound Theme" class="project-img" />
           <h3>Beyond Bound Theme</h3>
-          <p>Marketplace-listed theme with full modularity and personalization for marketing velocity.</p>
-          <a href="https://ecosystem.hubspot.com/marketplace/website/beyond-bounds-theme-by-growth-natives" target="_blank">Live Demo</a>
+          <p>
+            Marketplace-listed theme with full modularity and personalization for marketing velocity.
+          </p>
+          <a href="https://ecosystem.hubspot.com/marketplace/website/beyond-bounds-theme-by-growth-natives" target="_blank" rel="noopener"
+            >Live Demo</a
+          >
         </div>
         <div class="project-card">
-          <img src="Thumbnail_dark.png" alt="Testimonial module" class="project-img"/>
+          <img src="Thumbnail_dark.png" alt="Testimonial module" class="project-img" />
           <h3>Testimonial Module</h3>
           <p>Dynamic, drag-and-drop CMS module for testimonials, presentations, and events.</p>
-          <a href="https://ecosystem.hubspot.com/marketplace/modules/speaker-testimonial-module-by-growth-natives" target="_blank">Try Module</a>
+          <a href="https://ecosystem.hubspot.com/marketplace/modules/speaker-testimonial-module-by-growth-natives" target="_blank" rel="noopener"
+            >Try Module</a
+          >
         </div>
         <div class="project-card">
-          <img src="https://cdn.dribbble.com/users/3616376/screenshots/14651679/media/90b1813f65a0c67d81759b9ab23ab1ad.png" alt="Migration project" class="project-img"/>
+          <img
+            src="https://cdn.dribbble.com/users/3616376/screenshots/14651679/media/90b1813f65a0c67d81759b9ab23ab1ad.png"
+            alt="Migration project"
+            class="project-img"
+          />
           <h3>WP → HubSpot Migration</h3>
           <p>Full WordPress site migration: speed, SEO & easy content editing — no compromise.</p>
         </div>
       </div>
     </section>
-    <!-- SKILLS -->
-   <!-- Skills Carousel Section -->
-<section class="skills-row">
-  <h2>Skills &amp; Tools</h2>
-  <div class="carousel-container" style="max-width:600px;margin:0 auto;">
-    <button class="carousel-arrow left" aria-label="Previous">&larr;</button>
-    <ul class="skills-carousel" tabindex="0" aria-label="Skills carousel">
-      <li class="skill-tag">HubSpot CMS</li>
-      <li class="skill-tag">HubL</li>
-      <li class="skill-tag">HubDB</li>
-      <li class="skill-tag">JavaScript</li>
-      <li class="skill-tag">HTML5 / CSS3</li>
-      <li class="skill-tag">Email Templates</li>
-      <li class="skill-tag">Performance</li>
-      <li class="skill-tag">Figma &amp; UI Dev</li>
-      <li class="skill-tag">SEO</li>
-    </ul>
-    <button class="carousel-arrow right" aria-label="Next">&rarr;</button>
-  </div>
-</section>
 
-    <!-- CONTACT -->
+    <!-- SKILLS CAROUSEL SECTION -->
+    <section class="skills-row">
+      <h2>Skills &amp; Tools</h2>
+      <div class="carousel-container">
+        <ul class="skills-carousel" tabindex="0" aria-label="Skills carousel">
+          <li class="skill-tag">HubSpot CMS</li>
+          <li class="skill-tag">HubL</li>
+          <li class="skill-tag">HubDB</li>
+          <li class="skill-tag">JavaScript</li>
+          <li class="skill-tag">HTML5 / CSS3</li>
+          <li class="skill-tag">Email Templates</li>
+          <li class="skill-tag">Performance</li>
+          <li class="skill-tag">Figma &amp; UI Dev</li>
+          <li class="skill-tag">SEO</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
     <section class="contact-section" id="contact">
       <h2>Let’s Connect</h2>
-      <div>Ready to unlock your brand’s next step? I work with startups, scale-ups, enterprise teams & creative agencies.<br/></div>
+      <div>
+        Ready to unlock your brand’s next step? I work with startups, scale-ups, enterprise
+        teams & creative agencies.<br />
+      </div>
       <div class="contact-links">
         <a href="mailto:muskaan1812ngl@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/muskaan-muskaan-2246161b4" target="_blank">LinkedIn</a>
-        <a href="Muskaan%20Resume.pdf" target="_blank">Resume</a>
+        <a href="https://www.linkedin.com/in/muskaan-muskaan-2246161b4" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="Muskaan%20Resume.pdf" target="_blank" rel="noopener">Resume</a>
       </div>
-      <form id="contactForm" autocomplete="off" style="margin-top:18px;">
-        <input required type="text" class="skill-tag" style="width:78%;margin-bottom:10px;" name="name" placeholder="Your Name" />
-        <input required type="email" class="skill-tag" style="width:78%;margin-bottom:10px;" name="email" placeholder="Your Email" />
-        <textarea required style="width:78%;margin-bottom:10px;" class="skill-tag" rows="3" name="message" placeholder="Project Details or Questions..."></textarea>
-        <button type="submit" class="cta-btn" style="margin-top:6px;">Send Message</button>
-      </form>
-      <div id="form-msg" style="margin-top:9px;color:#fff;font-weight:600;"></div>
+      <div style="margin-top: 24px;">
+        <a href="https://calendar.app.google/prkdr5w9N7tcMRUU8" target="_blank" class="cta-btn" rel="noopener" style="padding: 13px 40px;">
+          Schedule a Meeting
+        </a>
+      </div>
     </section>
   </main>
+
+  <!-- FOOTER -->
   <footer>
     &copy; 2025 Muskaan • HubSpot CMS Engineer • All Rights Reserved.
   </footer>
-  <script>
-    // Contact form (demo)
-    document.getElementById('contactForm').onsubmit = function(e){
-      e.preventDefault();
-      document.getElementById('form-msg').textContent = "Thank you! Proposal or reply coming soon.";
-      this.reset();
-    };
-  </script>
-  <script>
-  // Carousel functionality
-  const scroller = document.querySelector('.skills-carousel');
-  document.querySelector('.carousel-arrow.left').onclick = () => {
-    scroller.scrollBy({left: -130, behavior: 'smooth'});
-  };
-  document.querySelector('.carousel-arrow.right').onclick = () => {
-    scroller.scrollBy({left: 130, behavior: 'smooth'});
-  };
-  // Keyboard support (left/right arrows)
-  scroller.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight') scroller.scrollBy({left: 130, behavior: 'smooth'});
-    if (e.key === 'ArrowLeft') scroller.scrollBy({left: -130, behavior: 'smooth'});
-  });
-</script>
 
+  <script>
+    // Automatically scroll the skills carousel with pause on hover/focus
+    const scroller = document.querySelector(".skills-carousel");
+    let autoScrollActive = true;
+    const scrollDistance = 130;
+
+    // Auto scroll function
+    function autoScroll() {
+      if (!autoScrollActive) return;
+      if (scroller.scrollLeft + scroller.offsetWidth >= scroller.scrollWidth - 1) {
+        // Reset scroll to start smoothly
+        scroller.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        scroller.scrollBy({ left: scrollDistance, behavior: "smooth" });
+      }
+    }
+
+    // Start auto-scroll interval (every 2.5 seconds)
+    const interval = setInterval(autoScroll, 2500);
+
+    // Pause auto-scroll on mouse hover and focus
+    scroller.addEventListener("mouseenter", () => (autoScrollActive = false));
+    scroller.addEventListener("mouseleave", () => (autoScrollActive = true));
+    scroller.addEventListener("focusin", () => (autoScrollActive = false));
+    scroller.addEventListener("focusout", () => (autoScrollActive = true));
+
+    // Keyboard navigation support (scroll left/right when focused)
+    scroller.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") {
+        scroller.scrollBy({ left: scrollDistance, behavior: "smooth" });
+        e.preventDefault();
+      }
+      if (e.key === "ArrowLeft") {
+        scroller.scrollBy({ left: -scrollDistance, behavior: "smooth" });
+        e.preventDefault();
+      }
+    });
+
+    // Cleanup interval on page unload
+    window.addEventListener("beforeunload", () => clearInterval(interval));
+  </script>
 </body>
 </html>
