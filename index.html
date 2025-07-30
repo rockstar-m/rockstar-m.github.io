@@ -3,425 +3,181 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Muskaan | HubSpot CMS Developer</title>
+  <title>Muskaan | HubSpot CMS Engineer — Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Reset & base */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #e6f0ff, #ffffff);
-      color: #222;
-      transition: background-color 0.3s, color 0.3s;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    body.dark {
-      background: #121214;
-      color: #fff;
-    }
-    a {
-      color: #005D8C;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    a:hover {
-      color: #003F5C;
+      margin: 0; font-family: 'Open Sans',sans-serif; background: #f8fcff;
+      color: #222b38; min-height: 100vh;
+      display: flex; flex-direction: column;
     }
     header {
-      background: linear-gradient(to right, #002B5B, #005D8C);
-      color: white;
-      text-align: center;
-      padding: 120px 20px 60px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      min-height: 80vh; padding: 0 22px;
+      background: linear-gradient(120deg, #005D8C 60%, #2fd9fe 100%);
+      color: #fff; text-align: center;
       position: relative;
     }
-    /* Profile photo circle placeholder */
-    .profile-photo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: url('https://via.placeholder.com/120') center/cover no-repeat;
-      margin: 0 auto 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      border: 3px solid #fff;
+    .profile-pic-bg { margin: 0 0 22px 0;}
+    .profile-pic-bg img {
+      width: 110px;height:110px;border-radius:50%;border:4px solid #fff;box-shadow:0 2px 20px #38c7fa66;
+      object-fit:cover;background:#eee;
     }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 8px;
-      min-height: 48px;
-      font-weight: 700;
+    h1 {
+      font-family: 'Montserrat',Arial,sans-serif;
+      font-weight: 700; font-size: 2.74rem; margin-bottom:10px;
+      text-shadow:0 4px 18px #38c7fa90;
     }
-    /* Typewriter effect */
-    .typewriter-text {
-      display: inline-block;
-      border-right: 2px solid #fff;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: typing 3s steps(30, end) forwards, blink 1s infinite;
-      font-size: 1.5rem;
-      margin-bottom: 16px;
-      font-weight: 500;
+    .hero-sub {
+      font-size:1.23rem; letter-spacing:.2px; margin-bottom:14px;
+      color: #eaf6fd;
     }
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
+    .cta-strip {
+      margin-top: 22px; display: flex; gap: 16px; justify-content: center;flex-wrap:wrap;
     }
-    @keyframes blink {
-      0%, 100% { border-color: transparent }
-      50% { border-color: white }
+    .cta-btn {
+      padding: 13px 34px; border-radius: 29px;
+      font-weight: 700; font-size: 1.15rem; letter-spacing:.5px; border:none;
+      background: #fff; color: #005D8C;
+      transition: .25s; box-shadow:0 3px 20px #005d8c22; cursor:pointer;
+      font-family: 'Montserrat',Arial,sans-serif;
+      text-decoration: none; outline: none;
     }
-    header p {
-      font-size: 1.25rem;
-      max-width: 600px;
-      margin: 0 auto 30px;
-      font-weight: 400;
-      line-height: 1.5;
+    .cta-btn:hover { background: #ff5b5b; color: #fff;}
+    .projects-showcase, .skills-row { background: #fff; border-radius:17px; box-shadow:0 2px 14px #13a6e210; margin:30px 0; padding: 36px 12px;}
+    .projects {
+      display: flex; gap:22px; flex-wrap:wrap; justify-content:center;
     }
-    .btn {
-      background: #ffffff;
-      color: #005D8C;
-      padding: 14px 28px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 700;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-      transition: background-color 0.4s, color 0.4s, transform 0.3s;
-      display: inline-block;
-      font-size: 1.1rem;
+    .project-card {
+      flex: 1 1 260px; background: #eaf6fd; border-radius:14px; box-shadow:0 2px 10px #005D8C13;
+      padding: 25px 16px; margin:10px 0;
+      display: flex;flex-direction:column;align-items:center;
+      transition:transform .25s;
     }
-    .btn:hover, .btn:focus {
-      background: #c7dbff;
-      color: #003F5C;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-      outline: none;
+    .project-card:hover { transform: translateY(-3px) scale(1.03);}
+    .project-card h3 {margin-bottom:10px;color:#005D8C;}
+    .project-card p {margin-bottom:12px;}
+    .project-card a {
+      background:#005D8C; color:#fff; border-radius:8px; padding: 5px 15px;
+      font-weight:600;text-decoration:none;
+      transition:background .2s;
     }
-
-    main {
-      flex: 1;
-      width: 100%;
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
+    .project-card a:hover {background:#ff5b5b;}
+    .project-img {
+      width:100%;max-width:283px;height:110px;object-fit:cover;border-radius:7px;margin-bottom:10px;border:1px solid #e1f2fc;
+      background: #e1eaf6;
     }
-    section {
-      margin-bottom: 64px;
-    }
-    section h2 {
-      color: #005D8C;
-      font-size: 2.25rem;
-      border-bottom: 3px solid #005D8C;
-      padding-bottom: 8px;
-      margin-bottom: 26px;
-      font-weight: 700;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 28px;
-    }
-    .card {
-      background: white;
-      border-radius: 14px;
-      padding: 26px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 18px 30px rgba(0,0,0,0.18);
-    }
-    .card h3 {
-      margin-bottom: 12px;
-      font-weight: 700;
-      color: #003F5C;
-    }
-    .card p {
-      flex-grow: 1;
-      font-size: 1rem;
-      line-height: 1.5;
-      margin-bottom: 16px;
-    }
-    .card a {
-      color: #007acc;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-    .card a:hover {
-      color: #005D8C;
-      text-decoration: underline;
-    }
-
-    /* Skills */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 20px;
-    }
-    .skill {
-      background: #d8e8ff;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-size: 15px;
-      font-weight: 600;
-      transition: background-color 0.3s, color 0.3s;
-      cursor: default;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 8px rgb(133 172 255 / 0.3);
-    }
-    .skill:hover {
-      background: #005D8C;
-      color: #fff;
-    }
-    /* Skill icons placeholder - you can replace with actual SVG icons */
-    .skill svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-    }
-
-    /* Contact */
-    .contact-info a {
-      color: #005D8C;
-      font-weight: 600;
-      word-break: break-word;
-    }
-    .contact-info a:hover {
-      color: #003F5C;
-      text-decoration: underline;
-    }
-
-    /* Contact Form */
-    form {
-      max-width: 400px;
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    input, textarea {
-      padding: 12px 16px;
-      font-size: 1rem;
-      border-radius: 8px;
-      border: 1px solid #c4c4c4;
-      resize: vertical;
-      transition: border-color 0.3s;
-    }
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: #005d8c;
-      box-shadow: 0 0 6px rgba(0, 93, 140, 0.5);
-    }
-    button.submit-btn {
-      background-color: #005D8C;
-      color: #fff;
-      border: none;
-      padding: 12px;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    button.submit-btn:hover {
-      background-color: #003F5C;
-    }
-
-    /* Footer */
-    footer {
+    .skills-row {
       text-align: center;
-      padding: 40px 20px;
-      background: #f1f1f1;
-      font-size: 14px;
-      color: #555;
-      user-select: none;
-      transition: background-color 0.3s, color 0.3s;
     }
-    body.dark footer {
-      background: #1e1e1e;
-      color: #ccc;
+    .skills-list {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
     }
-
-    /* Dark mode toggle */
-    .dark-mode-toggle {
-      position: fixed;
-      top: 18px;
-      right: 18px;
-      background: #005D8C;
-      border-radius: 50px;
-      width: 50px;
-      height: 26px;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,93,140,0.5);
-      display: flex;
-      align-items: center;
-      padding: 0 5px;
-      user-select: none;
-      z-index: 1000;
+    .skill-tag {
+      background: #d8e8ff; border-radius:19px; padding:8px 23px; font-weight:600;color:#005d8c;
+      margin-bottom:7px;
+      box-shadow:0 2px 7px #005d8c11; transition: background .25s,color .25s;
     }
-    .dark-mode-toggle span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      background: #fff;
-      border-radius: 50%;
-      transition: transform 0.3s;
+    .skill-tag:hover { background: #005D8C; color: #fff;}
+    @media(max-width:760px){
+      header{min-height:60vh;}
+      h1 { font-size: 1.5rem;}
+      .projects { flex-direction:column;}
     }
-    .dark-mode-toggle.dark span {
-      transform: translateX(24px);
-      background: #222;
+    .contact-section {
+      text-align:center;padding:32px 7px 12px;
+      background:#005D8C;color:#fff;margin:38px auto 0 auto;border-radius:13px;
+      max-width:600px;
     }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      section h2 {
-        font-size: 1.75rem;
-      }
-      .card p {
-        font-size: 0.95rem;
-      }
+    .contact-links {
+      margin:15px 0;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
     }
+    .contact-links a{color:#2fd9fe;font-weight:700;text-decoration:none;background: #fff;padding:5px 14px;border-radius:8px;}
+    .contact-links a:hover{background:#ff5b5b;color:#fff;}
+    footer {text-align: center; color:#888;font-size:1rem;padding:30px 14px 16px;font-family:'Montserrat';}
   </style>
 </head>
 <body>
-  <!-- Dark mode toggle -->
-  <div class="dark-mode-toggle" aria-label="Toggle dark mode" role="button" tabindex="0" title="Toggle dark mode">
-    <span></span>
-  </div>
-
+  <!-- HERO-->
   <header>
-    <div class="profile-photo" aria-label="Muskaan Profile Photo" role="img"></div>
-    <h1>Hi, I'm <span class="typewriter-text">Muskaan, HubSpot CMS Developer</span></h1>
-    <p>Senior HubSpot CMS Developer with a focus on building dynamic, scalable themes and modules that drive engagement and performance.</p>
-    <a href="Muskaan%20Resume.pdf" class="btn" target="_blank" rel="noopener noreferrer">Download Resume</a>
+    <div class="profile-pic-bg">
+      <img src="https://randomuser.me/api/portraits/women/81.jpg" alt="Muskaan profile photo" />
+    </div>
+    <h1>HubSpot CMS Engineering That Grows Brands</h1>
+    <div class="hero-sub">Modular themes, real conversions, inventive solutions.<br>Let’s build something extraordinary together!</div>
+    <div class="cta-strip">
+      <a class="cta-btn" href="Muskaan%20Resume.pdf" target="_blank">Download Resume</a>
+      <a class="cta-btn" href="#contact">Request Free Consultation</a>
+    </div>
   </header>
-
+  <!-- PROJECTS -->
   <main>
-    <section>
-      <h2>About Me</h2>
-      <p>I specialize in HubSpot CMS development, bringing designs to life through custom HubL modules, HubDB integrations, and responsive landing pages. With over 2 years of experience, I’ve built assets that power marketing campaigns, increase flexibility for editors, and deliver results across industries.</p>
-    </section>
-
-    <section>
-      <h2>Skills</h2>
-      <div class="skills" aria-label="Skills list">
-        <span class="skill" title="HubSpot CMS">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>HubSpot CMS
-        </span>
-        <span class="skill" title="HubL">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12"/></svg>HubL
-        </span>
-        <span class="skill" title="HTML">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22"/></svg>HTML
-        </span>
-        <span class="skill" title="CSS">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>CSS
-        </span>
-        <span class="skill" title="JavaScript">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="7" cy="12" r="3"/><circle cx="17" cy="12" r="3"/></svg>JavaScript
-        </span>
-        <span class="skill" title="HubDB">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="5"/></svg>HubDB
-        </span>
-        <span class="skill" title="Email Templates">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>Email Templates
-        </span>
-        <span class="skill" title="Web Performance">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>Web Performance
-        </span>
-        <span class="skill" title="Figma to Code">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12"/></svg>Figma to Code
-        </span>
-        <span class="skill" title="SEO">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22"/></svg>SEO
-        </span>
-      </div>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-      <div class="cards" aria-label="Projects list">
-
-        <div class="card" tabindex="0">
+    <section class="projects-showcase">
+      <h2 style="text-align:center;">Featured Work</h2>
+      <div class="projects">
+        <div class="project-card">
+          <img src="https://cdn.dribbble.com/users/989466/screenshots/14352544/media/1addc20a4c45cc12b8f59ede41c624a4.png" alt="Beyond Bound Theme" class="project-img"/>
           <h3>Beyond Bound Theme</h3>
-          <p>A fully modular, responsive theme listed on the HubSpot Marketplace with drag-and-drop layout and personalization support.</p>
-          <a href="https://ecosystem.hubspot.com/marketplace/website/beyond-bounds-theme-by-growth-natives" target="_blank" rel="noopener noreferrer" aria-label="View Beyond Bound Theme on HubSpot Marketplace">View Theme</a>
-          <!-- Placeholder for project demo or gif -->
-          <!--<img src="path/to/beyond-bound-screenshot.gif" alt="Beyond Bound Theme demo" style="margin-top: 15px; max-width: 100%; border-radius: 8px;">-->
+          <p>Marketplace-listed theme with full modularity and personalization for marketing velocity.</p>
+          <a href="https://ecosystem.hubspot.com/marketplace/website/beyond-bounds-theme-by-growth-natives" target="_blank">Live Demo</a>
         </div>
-
-        <div class="card" tabindex="0">
-          <h3>Speaker/Testimonial Module</h3>
-          <p>A reusable module for showcasing event speakers and testimonials dynamically using HubDB and smart layout logic.</p>
-          <a href="https://ecosystem.hubspot.com/marketplace/modules/speaker-testimonial-module-by-growth-natives" target="_blank" rel="noopener noreferrer" aria-label="View Speaker/Testimonial Module on HubSpot Marketplace">View Module</a>
+        <div class="project-card">
+          <img src="https://cdn.dribbble.com/users/642793/screenshots/14423517/media/008bde8e3a316035471f35bf2ccb1235.png" alt="Testimonial module" class="project-img"/>
+          <h3>Testimonial Module</h3>
+          <p>Dynamic, drag-and-drop CMS module for testimonials, presentations, and events.</p>
+          <a href="https://ecosystem.hubspot.com/marketplace/modules/speaker-testimonial-module-by-growth-natives" target="_blank">Try Module</a>
         </div>
-
-        <div class="card" tabindex="0">
-          <h3>Website Migration</h3>
-          <p>Migrated and optimized an entire WordPress site into HubSpot CMS for better performance, SEO, and editor usability.</p>
+        <div class="project-card">
+          <img src="https://cdn.dribbble.com/users/3616376/screenshots/14651679/media/90b1813f65a0c67d81759b9ab23ab1ad.png" alt="Migration project" class="project-img"/>
+          <h3>WP → HubSpot Migration</h3>
+          <p>Full WordPress site migration: speed, SEO & easy content editing — no compromise.</p>
         </div>
-
       </div>
     </section>
-
-    <section>
-      <h2>Contact</h2>
-      <div class="contact-info">
-        <p>Email: <a href="mailto:muskaan1812ngl@gmail.com">muskaan1812ngl@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/muskaan-muskaan-2246161b4" target="_blank" rel="noopener noreferrer">linkedin.com/in/muskaan-muskaan-2246161b4</a></p>
+    <!-- SKILLS -->
+    <section class="skills-row">
+      <h2>Skills & Tools</h2>
+      <div class="skills-list">
+        <span class="skill-tag">HubSpot CMS</span>
+        <span class="skill-tag">HubL</span>
+        <span class="skill-tag">HubDB</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">HTML5 / CSS3</span>
+        <span class="skill-tag">Email Templates</span>
+        <span class="skill-tag">Performance</span>
+        <span class="skill-tag">Figma & UI Dev</span>
+        <span class="skill-tag">SEO</span>
       </div>
-
-      <form id="contactForm" aria-label="Contact form for Muskaan">
-        <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true" />
-        <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true" />
-        <textarea id="message" name="message" rows="4" placeholder="Your Message" required aria-required="true"></textarea>
-        <button type="submit" class="submit-btn">Send Message</button>
+    </section>
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <h2>Let’s Connect</h2>
+      <div>Ready to unlock your brand’s next step? I work with startups, scale-ups, enterprise teams & creative agencies.<br/></div>
+      <div class="contact-links">
+        <a href="mailto:muskaan1812ngl@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/muskaan-muskaan-2246161b4" target="_blank">LinkedIn</a>
+        <a href="Muskaan%20Resume.pdf" target="_blank">Resume</a>
+      </div>
+      <form id="contactForm" autocomplete="off" style="margin-top:18px;">
+        <input required type="text" class="skill-tag" style="width:78%;margin-bottom:10px;" name="name" placeholder="Your Name" />
+        <input required type="email" class="skill-tag" style="width:78%;margin-bottom:10px;" name="email" placeholder="Your Email" />
+        <textarea required style="width:78%;margin-bottom:10px;" class="skill-tag" rows="3" name="message" placeholder="Project Details or Questions..."></textarea>
+        <button type="submit" class="cta-btn" style="margin-top:6px;">Send Message</button>
       </form>
+      <div id="form-msg" style="margin-top:9px;color:#fff;font-weight:600;"></div>
     </section>
   </main>
-
   <footer>
-    &copy; 2025 Muskaan. All rights reserved.
+    &copy; 2025 Muskaan • HubSpot CMS Engineer • All Rights Reserved.
   </footer>
-
   <script>
-    // Dark mode toggle
-    const toggle = document.querySelector('.dark-mode-toggle');
-    toggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      toggle.classList.toggle('dark');
-    });
-    // Allow keyboard toggle
-    toggle.addEventListener('keydown', (e) => {
-      if(e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggle.click();
-      }
-    });
-
-    // Contact form submission simulation
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    // Contact form (demo)
+    document.getElementById('contactForm').onsubmit = function(e){
       e.preventDefault();
-      alert('Thank you for your message! I will get back to you shortly.');
+      document.getElementById('form-msg').textContent = "Thank you! Proposal or reply coming soon.";
       this.reset();
-    });
+    };
   </script>
 </body>
 </html>
