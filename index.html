@@ -4,12 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Muskaan | HubSpot CMS Developer (Senior Associate Marketing Automation)</title>
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  
   <!-- Slick carousel CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+  
   <style>
+    /* Base & layout */
     body {
       margin: 0;
       font-family: "Open Sans", sans-serif;
@@ -72,17 +77,33 @@
       box-shadow: 0 3px 20px #005d8c22;
       cursor: pointer;
       text-decoration: none;
+      outline: none;
+      white-space: nowrap;
     }
-    .cta-btn:hover {
+    .cta-btn:hover,
+    .cta-btn:focus {
       background: #ff5b5b;
       color: #fff;
+      outline: none;
     }
-    .projects-showcase, .skills-row {
+    .projects-showcase,
+    .skills-row {
       background: #fff;
       border-radius: 17px;
       box-shadow: 0 2px 14px #13a6e210;
-      margin: 30px 0;
-      padding: 36px 12px;
+      margin: 30px auto;
+      padding: 36px 20px;
+      max-width: 1100px;
+      box-sizing: border-box;
+    }
+    .projects-showcase h2,
+    .skills-row h2 {
+      margin-top: 0;
+      font-family: "Montserrat", sans-serif;
+      font-size: 2rem;
+      color: #005d8c;
+      margin-bottom: 24px;
+      text-align: center;
     }
     .projects {
       display: flex;
@@ -100,79 +121,140 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      transition: transform 0.25s;
+      transition: transform 0.25s ease-out;
+      box-sizing: border-box;
     }
-    .project-card:hover {
+    .project-card:hover,
+    .project-card:focus-within {
       transform: translateY(-3px) scale(1.03);
+      outline: none;
     }
     .project-card h3 {
       margin-bottom: 10px;
       color: #005d8c;
+      font-weight: 700;
+      text-align: center;
     }
     .project-card p {
       margin-bottom: 12px;
       text-align: center;
+      font-size: 1rem;
+      line-height: 1.4;
     }
     .project-card a {
       background: #005d8c;
       color: #fff;
       border-radius: 8px;
-      padding: 5px 15px;
+      padding: 8px 20px;
       font-weight: 600;
       text-decoration: none;
-      transition: background 0.2s;
+      transition: background 0.3s ease;
+      user-select: none;
     }
-    .project-card a:hover {
+    .project-card a:hover,
+    .project-card a:focus {
       background: #ff5b5b;
+      outline: none;
     }
     .project-img {
       width: 100%;
-      max-width: 283px;
+      max-width: 280px;
       height: 110px;
       object-fit: cover;
       border-radius: 7px;
-      margin-bottom: 10px;
+      margin-bottom: 16px;
       border: 1px solid #e1f2fc;
       background: #e1eaf6;
+      user-select: none;
     }
     .skills-row {
       text-align: center;
     }
-    .slick-list{
-      overflow:visible;
-    }
+    
+    /* Slick carousel styles */
     .skills-carousel {
+      max-width: 800px;
       margin: 0 auto;
       padding: 12px 0 0 0;
-      max-width: 800px;
     }
     .skill-tag {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
       background: #d8e8ff;
       border-radius: 19px;
-      padding: 10px 23px;
+      padding: 0 24px;
       color: #005d8c;
       font-weight: 600;
-      font-size: 1.07rem;
-      margin: 10px;
+      font-size: 1.05rem;
+      margin: 0 8px;
       text-align: center;
       cursor: default;
+      white-space: nowrap;
+      user-select: none;
+      transition: background 0.25s, color 0.25s;
     }
-    .skill-tag:hover {
+    .skill-tag:hover,
+    .skill-tag:focus {
       background: #005d8c;
       color: #fff;
+      outline: none;
     }
-    /* Slick Carousel overrides */
-    .slick-slide { display: flex !important; justify-content: center; align-items: center; }
-    .slick-dots li button:before { color: #005d8c; }
-    @media (max-width: 760px) {
+    /* Slick carousel customization */
+    .slick-slide {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      min-width: auto !important;
+      box-sizing: border-box;
+    }
+    .slick-list {
+      padding: 0 12px;
+      box-sizing: content-box;
+    }
+    /* Hide default arrows and dots */
+    .slick-arrow,
+    .slick-dots {
+      display: none !important;
+    }
+    @media (max-width: 1024px) {
+      .skills-carousel {
+        max-width: 100%;
+      }
+      .skill-tag {
+        font-size: 1rem;
+        padding: 0 20px;
+        margin: 0 6px;
+      }
+    }
+    @media (max-width: 768px) {
       header {
         min-height: 60vh;
       }
       h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
       }
       .projects {
         flex-direction: column;
+      }
+      .project-card {
+        max-width: 100%;
+      }
+      .skill-tag {
+        font-size: 0.95rem;
+        padding: 0 18px;
+        margin: 0 5px;
+      }
+    }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.4rem;
+      }
+      .skill-tag {
+        font-size: 0.9rem;
+        padding: 0 14px;
+        margin: 0 4px;
       }
     }
     .contact-section {
@@ -184,6 +266,7 @@
       border-radius: 13px;
       max-width: 600px;
       font-family: "Open Sans", sans-serif;
+      box-sizing: border-box;
     }
     .contact-links {
       margin: 15px 0;
@@ -200,10 +283,13 @@
       padding: 5px 14px;
       border-radius: 8px;
       transition: background 0.3s, color 0.3s;
+      white-space: nowrap;
     }
-    .contact-links a:hover {
+    .contact-links a:hover,
+    .contact-links a:focus {
       background: #ff5b5b;
       color: #fff;
+      outline: none;
     }
     footer {
       text-align: center;
@@ -211,6 +297,7 @@
       font-size: 1rem;
       padding: 30px 14px 16px;
       font-family: "Montserrat", sans-serif;
+      user-select: none;
     }
   </style>
 </head>
@@ -235,67 +322,58 @@
   <main>
     <!-- PROJECTS SECTION -->
     <section class="projects-showcase">
-      <h2 style="text-align:center;">Featured Work</h2>
+      <h2>Featured Work</h2>
       <div class="projects">
-        <div class="project-card">
+        <article class="project-card" tabindex="0">
           <img src="version 1 (1).png" alt="Beyond Bound Theme" class="project-img" />
           <h3>Beyond Bound Theme</h3>
           <p>
             Marketplace-listed theme with full modularity and personalization for marketing velocity.
           </p>
-          <a href="https://ecosystem.hubspot.com/marketplace/website/beyond-bounds-theme-by-growth-natives" target="_blank" rel="noopener"
-            >Live Demo</a
-          >
-        </div>
-        <div class="project-card">
+          <a href="https://ecosystem.hubspot.com/marketplace/website/beyond-bounds-theme-by-growth-natives" target="_blank" rel="noopener">Live Demo</a>
+        </article>
+        <article class="project-card" tabindex="0">
           <img src="Thumbnail_dark.png" alt="Testimonial module" class="project-img" />
           <h3>Testimonial Module</h3>
           <p>Dynamic, drag-and-drop CMS module for testimonials, presentations, and events.</p>
-          <a href="https://ecosystem.hubspot.com/marketplace/modules/speaker-testimonial-module-by-growth-natives" target="_blank" rel="noopener"
-            >Try Module</a
-          >
-        </div>
-        <div class="project-card">
-          <img
-            src="https://cdn.dribbble.com/users/3616376/screenshots/14651679/media/90b1813f65a0c67d81759b9ab23ab1ad.png"
-            alt="Migration project"
-            class="project-img"
-          />
+          <a href="https://ecosystem.hubspot.com/marketplace/modules/speaker-testimonial-module-by-growth-natives" target="_blank" rel="noopener">Try Module</a>
+        </article>
+        <article class="project-card" tabindex="0">
+          <img src="https://cdn.dribbble.com/users/3616376/screenshots/14651679/media/90b1813f65a0c67d81759b9ab23ab1ad.png" alt="Migration project" class="project-img" />
           <h3>WP → HubSpot Migration</h3>
           <p>Full WordPress site migration: speed, SEO & easy content editing — no compromise.</p>
-        </div>
+        </article>
       </div>
     </section>
 
-    <!-- SKILLS CAROUSEL SECTION (with Slick carousel) -->
+    <!-- SKILLS CAROUSEL SECTION -->
     <section class="skills-row">
       <h2>Skills &amp; Tools</h2>
       <div class="skills-carousel">
-        <div class="skill-tag">HubSpot CMS</div>
-        <div class="skill-tag">HubL</div>
-        <div class="skill-tag">HubDB</div>
-        <div class="skill-tag">JavaScript</div>
-        <div class="skill-tag">HTML5 / CSS3</div>
-        <div class="skill-tag">Email Templates</div>
-        <div class="skill-tag">Performance</div>
-        <div class="skill-tag">Figma & UI Dev</div>
-        <div class="skill-tag">SEO</div>
+        <div class="skill-tag" tabindex="0">HubSpot CMS</div>
+        <div class="skill-tag" tabindex="0">HubL</div>
+        <div class="skill-tag" tabindex="0">HubDB</div>
+        <div class="skill-tag" tabindex="0">JavaScript</div>
+        <div class="skill-tag" tabindex="0">HTML5 / CSS3</div>
+        <div class="skill-tag" tabindex="0">Email Templates</div>
+        <div class="skill-tag" tabindex="0">Performance</div>
+        <div class="skill-tag" tabindex="0">Figma &amp; UI Dev</div>
+        <div class="skill-tag" tabindex="0">SEO</div>
       </div>
     </section>
 
     <!-- CONTACT SECTION -->
     <section class="contact-section" id="contact">
       <h2>Let’s Connect</h2>
-      <div>
-        Ready to unlock your brand’s next step? I work with startups, scale-ups, enterprise
-        teams & creative agencies.<br />
-      </div>
+      <p>
+        Ready to unlock your brand’s next step? I work with startups, scale-ups, enterprise teams &amp; creative agencies.
+      </p>
       <div class="contact-links">
         <a href="mailto:muskaan1812ngl@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/muskaan-muskaan-2246161b4" target="_blank" rel="noopener">LinkedIn</a>
         <a href="Muskaan%20Resume.pdf" target="_blank" rel="noopener">Resume</a>
       </div>
-      <div style="margin:35px 9 40px 0;">
+      <div style="margin-top: 35px;">
         <a href="https://calendar.app.google/prkdr5w9N7tcMRUU8" target="_blank" class="cta-btn" rel="noopener" style="padding: 13px 40px;">
           Schedule a Meeting
         </a>
@@ -308,9 +386,10 @@
     &copy; 2025 Muskaan • HubSpot CMS Engineer • All Rights Reserved.
   </footer>
 
-  <!-- Scripts for Slick carousel -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <!-- Slick carousel JS dependencies -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" crossorigin="anonymous"></script>
+
   <script>
     $(document).ready(function () {
       $('.skills-carousel').slick({
@@ -325,18 +404,24 @@
         pauseOnFocus: true,
         responsive: [
           {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+            },
+          },
+          {
             breakpoint: 768,
             settings: {
-              slidesToShow: 2
-            }
+              slidesToShow: 2,
+            },
           },
           {
             breakpoint: 480,
             settings: {
-              slidesToShow: 1
-            }
-          }
-        ]
+              slidesToShow: 1,
+            },
+          },
+        ],
       });
     });
   </script>
