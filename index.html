@@ -163,8 +163,8 @@
       list-style: none;
       padding: 0;
       margin: 0 auto;
-      width: 92vw;
-      max-width: 600px;
+/*       width: 92vw;
+      max-width: 100%; */
       scrollbar-width: none; /* Firefox */
       -ms-overflow-style: none; /* IE 10+ */
       user-select: none;
@@ -350,42 +350,51 @@
   </footer>
 
   <script>
-    // Automatically scroll the skills carousel with pause on hover/focus
-    const scroller = document.querySelector(".skills-carousel");
-    let autoScrollActive = true;
-    const scrollDistance = 130;
+const scroller = document.querySelector(".skills-carousel");
+let autoScrollActive = true;
+const speed = 1; // pixels per animation frame
+let skillListWidth = 0;
 
-    // Auto scroll function
-    function autoScroll() {
-      if (!autoScrollActive) return;
-      if (scroller.scrollLeft + scroller.offsetWidth >= scroller.scrollWidth - 1) {
-        // Reset scroll to start smoothly
-        scroller.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        scroller.scrollBy({ left: scrollDistance, behavior: "smooth" });
-      }
+// Calculate the total width of all list items (once DOM is loaded)
+function calcWidth() {
+  skillListWidth = 0;
+  for (const li of scroller.children) {
+    skillListWidth += li.offsetWidth + parseInt(getComputedStyle(li).marginRight);
+  }
+}
+window.addEventListener("load", calcWidth);
+window.addEventListener("resize", calcWidth);
+
+// Animate scroll
+function smoothLoop() {
+  if (autoScrollActive) {
+    scroller.scrollLeft += speed;
+    // If we've scrolled over the total width of the list, reset for continuous loop
+    if (scroller.scrollLeft >= skillListWidth) {
+      scroller.scrollLeft = 0;
     }
+  }
+  requestAnimationFrame(smoothLoop);
+}
+requestAnimationFrame(smoothLoop);
 
-    // Start auto-scroll interval (every 2.5 seconds)
-    const interval = setInterval(autoScroll, 2500);
+// Pause auto-scroll on hover/focus
+scroller.addEventListener("mouseenter", () => (autoScrollActive = false));
+scroller.addEventListener("mouseleave", () => (autoScrollActive = true));
+scroller.addEventListener("focusin", () => (autoScrollActive = false));
+scroller.addEventListener("focusout", () => (autoScrollActive = true));
 
-    // Pause auto-scroll on mouse hover and focus
-    scroller.addEventListener("mouseenter", () => (autoScrollActive = false));
-    scroller.addEventListener("mouseleave", () => (autoScrollActive = true));
-    scroller.addEventListener("focusin", () => (autoScrollActive = false));
-    scroller.addEventListener("focusout", () => (autoScrollActive = true));
-
-    // Keyboard navigation support (scroll left/right when focused)
-    scroller.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowRight") {
-        scroller.scrollBy({ left: scrollDistance, behavior: "smooth" });
-        e.preventDefault();
-      }
-      if (e.key === "ArrowLeft") {
-        scroller.scrollBy({ left: -scrollDistance, behavior: "smooth" });
-        e.preventDefault();
-      }
-    });
+// Optional: Keyboard navigation
+scroller.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") {
+    scroller.scrollBy({ left: 120, behavior: "smooth" });
+    e.preventDefault();
+  }
+  if (e.key === "ArrowLeft") {
+    scroller.scrollBy({ left: -120, behavior: "smooth" });
+    e.preventDefault();
+  }
+});
 
     // Cleanup interval on page unload
     window.addEventListener("beforeunload", () => clearInterval(interval));
