@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Muskaan | HubSpot CMS Engineer — Landing Page</title>
+  <title>Muskaan | HubSpot CMS Developer (Senior Associate Marketing Automation)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -80,6 +80,31 @@
       box-shadow:0 2px 7px #005d8c11; transition: background .25s,color .25s;
     }
     .skill-tag:hover { background: #005D8C; color: #fff;}
+    .carousel-container {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  position: relative; width: 100%; overflow: hidden; margin-top: 18px;
+}
+.skills-carousel {
+  display: flex; gap: 12px; overflow: hidden; scroll-behavior: smooth;
+  list-style: none; padding: 0; margin: 0;
+  width: 92vw; max-width: 440px;
+}
+.skill-tag {
+  min-width: 120px; flex: 0 0 120px; text-align: center;
+  font-weight: 600; background: #d8e8ff; border-radius: 19px;
+  padding: 8px 23px; color: #005d8c; box-shadow:0 2px 7px #005d8c11;
+  margin-bottom:7px; font-size:1.07rem;
+}
+.carousel-arrow {
+  background: #fff; border: 2px solid #e5f1fb; color: #005d8c;
+  border-radius: 50%; width: 36px; height: 36px; font-size: 1.4rem;
+  font-weight: bold; box-shadow: 0 2px 6px #005d8c24; cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10; opacity: 0.8; margin: 0 3px;
+}
+.carousel-arrow:hover { background: #ff5b5b; color: #fff; }
+
     @media(max-width:760px){
       header{min-height:60vh;}
       h1 { font-size: 1.5rem;}
@@ -96,6 +121,10 @@
     .contact-links a{color:#2fd9fe;font-weight:700;text-decoration:none;background: #fff;padding:5px 14px;border-radius:8px;}
     .contact-links a:hover{background:#ff5b5b;color:#fff;}
     footer {text-align: center; color:#888;font-size:1rem;padding:30px 14px 16px;font-family:'Montserrat';}
+    @media (max-width:600px){
+  .skills-carousel{ max-width:200px; }
+  .skill-tag{ min-width:92px; font-size:.98rem;}
+}
   </style>
 </head>
 <body>
@@ -136,20 +165,26 @@
       </div>
     </section>
     <!-- SKILLS -->
-    <section class="skills-row">
-      <h2>Skills & Tools</h2>
-      <div class="skills-list">
-        <span class="skill-tag">HubSpot CMS</span>
-        <span class="skill-tag">HubL</span>
-        <span class="skill-tag">HubDB</span>
-        <span class="skill-tag">JavaScript</span>
-        <span class="skill-tag">HTML5 / CSS3</span>
-        <span class="skill-tag">Email Templates</span>
-        <span class="skill-tag">Performance</span>
-        <span class="skill-tag">Figma & UI Dev</span>
-        <span class="skill-tag">SEO</span>
-      </div>
-    </section>
+   <!-- Skills Carousel Section -->
+<section class="skills-row">
+  <h2>Skills &amp; Tools</h2>
+  <div class="carousel-container" style="max-width:600px;margin:0 auto;">
+    <button class="carousel-arrow left" aria-label="Previous">&larr;</button>
+    <ul class="skills-carousel" tabindex="0" aria-label="Skills carousel">
+      <li class="skill-tag">HubSpot CMS</li>
+      <li class="skill-tag">HubL</li>
+      <li class="skill-tag">HubDB</li>
+      <li class="skill-tag">JavaScript</li>
+      <li class="skill-tag">HTML5 / CSS3</li>
+      <li class="skill-tag">Email Templates</li>
+      <li class="skill-tag">Performance</li>
+      <li class="skill-tag">Figma &amp; UI Dev</li>
+      <li class="skill-tag">SEO</li>
+    </ul>
+    <button class="carousel-arrow right" aria-label="Next">&rarr;</button>
+  </div>
+</section>
+
     <!-- CONTACT -->
     <section class="contact-section" id="contact">
       <h2>Let’s Connect</h2>
@@ -179,5 +214,21 @@
       this.reset();
     };
   </script>
+  <script>
+  // Carousel functionality
+  const scroller = document.querySelector('.skills-carousel');
+  document.querySelector('.carousel-arrow.left').onclick = () => {
+    scroller.scrollBy({left: -130, behavior: 'smooth'});
+  };
+  document.querySelector('.carousel-arrow.right').onclick = () => {
+    scroller.scrollBy({left: 130, behavior: 'smooth'});
+  };
+  // Keyboard support (left/right arrows)
+  scroller.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') scroller.scrollBy({left: 130, behavior: 'smooth'});
+    if (e.key === 'ArrowLeft') scroller.scrollBy({left: -130, behavior: 'smooth'});
+  });
+</script>
+
 </body>
 </html>
