@@ -170,11 +170,50 @@
     background: #e1eaf6;
     user-select: none;
   }
+
+  /* Collapsible list styling */
+  .project-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  .project-card ul li {
+    margin: 6px 0;
+  }
+  .project-card ul li a {
+    color: #005d8c;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .project-card ul li a:hover {
+    color: #ff5b5b;
+    text-decoration: underline;
+  }
+  .collapsible {
+    max-height: 120px;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  .collapsible.expanded {
+    max-height: 400px;
+  }
+  .view-more {
+    color: #005d8c;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: underline;
+  }
+  .view-more:hover {
+    color: #ff5b5b;
+  }
+
+  /* Skills section */
   .skills-row {
     text-align: center;
   }
-  
-  /* Slick carousel styles */
   .skills-carousel {
     max-width: 1100px;
     margin: 0 auto;
@@ -204,77 +243,17 @@
     color: #fff;
     outline: none;
   }
-  /* Slick carousel customization */
   .slick-slide {
     display: flex !important;
     justify-content: center;
     align-items: center;
-    min-width: auto !important;
-    box-sizing: border-box;
   }
-  .slick-list {
-    padding: 0 12px;
-    box-sizing: content-box;
-  }
-  /* Hide default arrows and dots */
   .slick-arrow,
   .slick-dots {
     display: none !important;
   }
-  @media (max-width: 1024px) {
-    .skills-carousel {
-      max-width: 100%;
-    }
-    .skill-tag {
-      font-size: 1rem;
-      padding: 0 20px;
-      margin: 0 6px;
-    }
-    .hero-sub {
-      font-size: 1.15rem;
-    }
-  }
-  @media (max-width: 768px) {
-    header {
-      min-height: 60vh;
-    }
-    h1 {
-      font-size: 1.8rem;
-    }
-    .projects {
-      flex-direction: column;
-    }
-    .project-card {
-      max-width: 100%;
-    }
-    .skill-tag {
-      font-size: 0.95rem;
-      padding: 0 18px;
-      margin: 0 5px;
-    }
-    .hero-sub {
-      font-size: 1.12rem;
-    }
-  }
-  @media (max-width: 600px) {
-h1 {
-  font-size: 1.2rem; /* Smaller main heading */
-}
-.hero-sub {
-  font-size: 1rem; /* Smaller subtitle */
-}
-.skill-tag {
-  font-size: 0.85rem; /* Smaller skill tags for better fit */
-}
-.project-card p {
-  font-size: 0.9rem; /* Smaller project description */
-}
-/* Buttons can be smaller but still clickable */
-.cta-btn {
-  font-size: 0.95rem;
-  padding: 10px 20px;
-}
-}
+
+  /* Contact section */
   .contact-section {
     text-align: center;
     padding: 32px 7px 32px;
@@ -303,11 +282,9 @@ h1 {
     transition: background 0.3s, color 0.3s;
     white-space: nowrap;
   }
-  .contact-links a:hover,
-  .contact-links a:focus {
+  .contact-links a:hover {
     background: #ff5b5b;
     color: #fff;
-    outline: none;
   }
   footer {
     text-align: center;
@@ -317,11 +294,34 @@ h1 {
     font-family: "Montserrat", sans-serif;
     user-select: none;
   }
-  
+
+  @media (max-width: 1024px) {
+    .hero-sub {
+      font-size: 1.15rem;
+    }
+  }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+    .projects {
+      flex-direction: column;
+    }
+    .project-card {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 600px) {
+    h1 {font-size: 1.2rem;}
+    .hero-sub {font-size: 1rem;}
+    .skill-tag {font-size: 0.85rem;}
+    .project-card p {font-size: 0.9rem;}
+    .cta-btn {font-size: 0.95rem;padding: 10px 20px;}
+  }
 </style>
 </head>
+
 <body>
-<!-- HERO -->
 <header>
   <div class="profile-pic-bg">
     <img src="Muskaan-img.png" alt="Muskaan profile photo" />
@@ -331,9 +331,7 @@ h1 {
     I specialize in modular HubSpot themes, powerful workflows, dynamic modules, and optimized landing pages.<br />
     Experienced in Webflow-to-HubSpot migration, CRM segmentation, and email marketing templates that convert.
     <br>
-    My work focuses on combining design and functionality from building custom modules and dynamic templates to<strong>implementing serverless functions, 
-    HubDB-driven content, and CRM-powered personalization</strong>  to enhance user experience.<br>
-    I enjoy experimenting with HubSpot’s latest tools, improving efficiency through custom-coded solutions, and creating modules that empower marketers with flexibility and control.
+    My work focuses on combining design and functionality from building custom modules and dynamic templates to<strong> implementing serverless functions, HubDB-driven content, and CRM-powered personalization</strong> to enhance user experience.
   </div>
   <div class="cta-strip">
     <a class="cta-btn" href="Muskaan Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
@@ -341,85 +339,45 @@ h1 {
   </div>
 </header>
 
-<!-- MAIN CONTENT -->
 <main>
-  <!-- ABOUT SECTION -->
-  <section class="projects-showcase" style="margin-top:20px; margin-bottom:0;">
-    <h2>About</h2>
-    <p style="max-width:700px; margin:0 auto; font-size:1.11rem; line-height:1.6; color:#222b38;">
-      I’m Muskaan, a dedicated <strong>HubSpot CMS Developer</strong> focused on delivering high-performing digital solutions for startups and marketing teams.
-      <br><br>
-      I specialize in:
-    </p>
-      <ul style="text-align:left; max-width:660px; margin: 10px auto; padding-left:20px; line-height:1.6;">
-        <li><strong>Custom HubSpot CMS themes & modules</strong> built with HubL, HubDB, and clean UI/UX</li>
-        <li><strong>Advanced email template & landing page development</strong> focused on performance</li>
-        <li><strong>CRM segmentation and list management</strong> for personalized outreach</li>
-        <li><strong>Serverless Functions (Custom Logic & API Integrations)</strong></li>
-        <li><strong>Marketing automation workflows</strong> to streamline lead nurturing & sales</li>
-        <li><strong>Migration from Webflow/WordPress to HubSpot</strong> with SEO and speed best practices</li>
-      </ul>
-    <p style="max-width:700px; margin:0 auto; font-size:1.11rem; line-height:1.6; color:#222b38;">
-      With each project, I aim to blend creative visuals with smart automation to help brands grow confidently.
-    </p>
-  </section>
-
-  <!-- PROJECTS SECTION -->
   <section class="projects-showcase">
     <h2>Featured Work</h2>
     <div class="projects">
       <article class="project-card" tabindex="0">
         <img src="version 1 (1).png" alt="Beyond Bound Theme" class="project-img" />
         <h3>Beyond Bound Theme</h3>
-        <p>
-          Marketplace-listed theme with full modularity and personalization for marketing velocity.
-        </p>
+        <p>Marketplace-listed theme with full modularity and personalization for marketing velocity.</p>
         <a href="https://ecosystem.hubspot.com/marketplace/website/beyond-bounds-theme-by-growth-natives" target="_blank" rel="noopener">Live Demo</a>
       </article>
+
       <article class="project-card" tabindex="0">
         <img src="Thumbnail_dark.png" alt="Testimonial module" class="project-img" />
         <h3>Speaker/Testimonial Module</h3>
         <p>Dynamic, drag-and-drop CMS module for testimonials, presentations, and events.</p>
         <a href="https://ecosystem.hubspot.com/marketplace/modules/speaker-testimonial-module-by-growth-natives" target="_blank" rel="noopener">Try Module</a>
       </article>
+
       <article class="project-card" tabindex="0">
         <img src="WP_Mig_HS.png" alt="Migration project" class="project-img" />
         <h3>WP → HubSpot Migration</h3>
         <p>Full WordPress site migration: speed, SEO & easy content editing — no compromise.</p>
       </article>
+
       <article class="project-card">
         <h3>Client Work</h3>
-        <ul>                        
-          <li><a href="https://councilforinclusion.org/">
-            CISF
-          </a>
-          </li>
-          <li><a href="https://www.dispatchit.com/">
-            DispatchIt
-          </a>
-          </li>
-          <li><a href="https://www.frontstream.com/">
-            Frontstream
-          </a>
-          </li>
-          <li><a href="https://go.anaqua.com/en/lp">
-            Anaqua
-          </a>
-          </li>
-          <li><a href="https://marketing.servicebridge.com/">
-            GPS
-          </a>
-          </li>
-          <li><a href="https://www.plyomat.com/">
-            Plyomat 
-          </a>
-          </li>
+        <ul class="collapsible">
+          <li><a href="https://councilforinclusion.org/">CISF</a></li>
+          <li><a href="https://www.dispatchit.com/">DispatchIt</a></li>
+          <li><a href="https://www.frontstream.com/">Frontstream</a></li>
+          <li><a href="https://go.anaqua.com/en/lp">Anaqua</a></li>
+          <li><a href="https://marketing.servicebridge.com/">GPS</a></li>
+          <li><a href="https://www.plyomat.com/">Plyomat</a></li>
         </ul>
+        <span class="view-more">View More</span>
       </article>
     </div>
   </section>
 
-  <!-- SKILLS CAROUSEL SECTION -->
   <section class="skills-row">
     <h2>Skills &amp; Tools</h2>
     <div class="skills-carousel">
@@ -440,21 +398,16 @@ h1 {
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
   <section class="contact-section" id="contact">
     <h2>Let’s Connect</h2>
-    <p>
-      Ready to unlock your brand’s next step? I work with startups, scale-ups, enterprise teams &amp; creative agencies.
-    </p>
+    <p>Ready to unlock your brand’s next step? I work with startups, scale-ups, enterprise teams &amp; creative agencies.</p>
     <div class="contact-links">
       <a href="mailto:muskaan1812ngl@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/muskaan-muskaan-2246161b4" target="_blank" rel="noopener">LinkedIn</a>
       <a href="Muskaan Resume.pdf" target="_blank" rel="noopener">Resume</a>
     </div>
     <div style="margin-top: 35px;">
-      <a href="https://calendar.app.google/prkdr5w9N7tcMRUU8" target="_blank" class="cta-btn" rel="noopener" style="padding: 13px 40px;">
-        Schedule a Meeting
-      </a>
+      <a href="https://calendar.app.google/prkdr5w9N7tcMRUU8" target="_blank" class="cta-btn" rel="noopener" style="padding: 13px 40px;">Schedule a Meeting</a>
     </div>
   </section>
 </main>
@@ -463,7 +416,7 @@ h1 {
   &copy; 2025 Muskaan • HubSpot CMS Developer • All Rights Reserved.
 </footer>
 
-<!-- Slick carousel JS dependencies -->
+<!-- JS -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" crossorigin="anonymous"></script>
 <script>
@@ -471,33 +424,29 @@ h1 {
     $('.skills-carousel').slick({
       infinite: true,
       slidesToShow: 4,
-      slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 2000,
       arrows: false,
       dots: false,
       pauseOnHover: true,
-      pauseOnFocus: true,
       responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-          },
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 2,
-          },
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-          },
-        },
+        { breakpoint: 1024, settings: { slidesToShow: 3 } },
+        { breakpoint: 768, settings: { slidesToShow: 2 } },
+        { breakpoint: 480, settings: { slidesToShow: 1 } },
       ],
+    });
+  });
+
+  // Collapsible "View More" logic
+  document.addEventListener("DOMContentLoaded", () => {
+    const viewMoreBtn = document.querySelector(".view-more");
+    const list = document.querySelector(".project-card ul.collapsible");
+
+    viewMoreBtn.addEventListener("click", () => {
+      list.classList.toggle("expanded");
+      viewMoreBtn.textContent = list.classList.contains("expanded")
+        ? "View Less"
+        : "View More";
     });
   });
 </script>
